@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Hackney Osteopath — Rory Fairbairn, Cambridge Heath E2</title>
+<meta name="description" content="Osteopathy for back pain, injuries and everyday aches. Rory Fairbairn's practice by Regent's Canal in Cambridge Heath, London E2. 45-minute appointments, weekends available.">
+<meta name="color-scheme" content="light dark">
+<style>
+  :root{
+    color-scheme:light dark;
+    --bg:#FBFAF7;
+    --ink:#2A2E2B;
+    --muted:#5C635E;
+    --green:#3D6B57;
+    --green-dark:#2E5344;
+    --rule:#E3E2DC;
+    --box:#F3F2EC;
+    --star:#B07C3E;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#191C1A;
+      --ink:#E6E7E3;
+      --muted:#A2A8A2;
+      --green:#8FB8A5;
+      --green-dark:#A8CBBB;
+      --rule:#333834;
+      --box:#202421;
+      --star:#CE9B5C;
+    }
+  }
+  :root[data-theme="dark"]{
+    color-scheme:dark;
+    --bg:#191C1A;
+    --ink:#E6E7E3;
+    --muted:#A2A8A2;
+    --green:#8FB8A5;
+    --green-dark:#A8CBBB;
+    --rule:#333834;
+    --box:#202421;
+    --star:#CE9B5C;
+  }
+  :root[data-theme="light"]{
+    color-scheme:light;
+    --bg:#FBFAF7;
+    --ink:#2A2E2B;
+    --muted:#5C635E;
+    --green:#3D6B57;
+    --green-dark:#2E5344;
+    --rule:#E3E2DC;
+    --box:#F3F2EC;
+    --star:#B07C3E;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font:17px/1.6 Georgia,"Times New Roman",serif;
+  }
+  .container{max-width:840px;margin:0 auto;padding:0 24px}
+
+  h1,h2,h3{font-weight:normal;line-height:1.2;margin:0}
+  h1{font-size:40px;margin-bottom:18px}
+  h2{font-size:27px;margin-bottom:16px}
+  h3{font-size:19px}
+  p{margin:0 0 16px;max-width:66ch}
+  a{color:var(--green-dark)}
+  a:hover{color:var(--green)}
+  ul,ol{margin:0 0 16px;padding-left:22px}
+  li{margin-bottom:6px}
+  .muted{color:var(--muted)}
+  .small{font-size:14.5px}
+
+  /* header */
+  .top{
+    border-bottom:1px solid var(--rule);
+    padding:16px 0;
+  }
+  .top .container{
+    display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  }
+  .site-name{font-size:20px;text-decoration:none;color:var(--ink)}
+  .top nav{font-family:Verdana,Geneva,sans-serif;font-size:13px}
+  .top nav a{margin-left:18px;color:var(--muted);text-decoration:none}
+  .top nav a:hover{color:var(--ink);text-decoration:underline}
+  @media (max-width:640px){.top nav a:nth-child(n+4){display:none}}
+  #theme-toggle{
+    margin-left:18px;
+    font-family:Verdana,Geneva,sans-serif;font-size:12px;
+    color:var(--muted);background:none;
+    border:1px solid var(--rule);border-radius:4px;
+    padding:4px 10px;cursor:pointer;
+  }
+  #theme-toggle:hover{color:var(--ink);border-color:var(--muted)}
+
+  .concept-bar{
+    background:var(--box);border-bottom:1px solid var(--rule);
+    font-family:Verdana,Geneva,sans-serif;font-size:11.5px;color:var(--muted);
+    text-align:center;padding:7px 16px;
+  }
+
+  /* intro */
+  .intro{padding:64px 0 8px}
+  .intro .lead{font-size:19px}
+  .cta-row{margin:26px 0 10px}
+  .button{
+    display:inline-block;
+    font-family:Verdana,Geneva,sans-serif;font-size:14px;
+    background:var(--green);color:var(--bg);
+    padding:11px 20px;border-radius:4px;text-decoration:none;
+    margin-right:12px;margin-bottom:10px;
+  }
+  .button:hover{background:var(--green-dark);color:var(--bg)}
+  .phone-line{font-size:16px}
+  .facts{margin-top:22px;font-family:Verdana,Geneva,sans-serif;font-size:13px;color:var(--muted)}
+  .facts .stars{color:var(--star);letter-spacing:1px}
+
+  section{padding:40px 0;border-top:1px solid var(--rule)}
+  .intro + section{margin-top:48px}
+
+  /* treat list */
+  .two-col{columns:2;column-gap:48px;max-width:640px}
+  @media (max-width:560px){.two-col{columns:1}}
+  .two-col li{break-inside:avoid}
+
+  /* fees */
+  .fee-table{width:100%;max-width:640px;border-collapse:collapse;margin-bottom:14px}
+  .fee-table td{
+    padding:13px 0;border-bottom:1px solid var(--rule);vertical-align:top;
+  }
+  .fee-table td:last-child{text-align:right;white-space:nowrap}
+  .fee-table .small{display:block;margin-top:2px}
+
+  /* address box */
+  .addr-box{
+    background:var(--box);border:1px solid var(--rule);border-radius:6px;
+    padding:20px 24px;max-width:640px;margin:8px 0 18px;
+  }
+  .addr-box p{margin-bottom:10px}
+  .addr-box p:last-child{margin-bottom:0}
+
+  /* faq */
+  details{border-bottom:1px solid var(--rule);max-width:680px}
+  details:first-of-type{border-top:1px solid var(--rule)}
+  summary{cursor:pointer;padding:14px 0;font-size:18px}
+  details p{padding-bottom:14px}
+
+  /* footer */
+  footer{
+    border-top:1px solid var(--rule);
+    padding:28px 0 40px;margin-top:56px;
+    font-family:Verdana,Geneva,sans-serif;font-size:12.5px;color:var(--muted);
+  }
+  footer p{margin-bottom:6px}
+  footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+
+<div class="concept-bar">Design concept prepared for The Hackney Osteopath</div>
+
+<div class="top">
+  <div class="container">
+    <a class="site-name" href="#">The Hackney Osteopath</a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#treat">What I treat</a>
+      <a href="#fees">Fees</a>
+      <a href="#visit">First visit</a>
+      <a href="#find">Find the studio</a>
+      <button id="theme-toggle" type="button" aria-label="Switch colour theme">Dark mode</button>
+    </nav>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="intro">
+    <h1>Osteopathy in Cambridge Heath</h1>
+    <p class="lead">I'm Rory Fairbairn, an osteopath working from a small studio on Corbridge Crescent, right next to Regent's Canal in east London. I treat back pain, neck pain, sports injuries and the general aches that build up from work, training or just life.</p>
+    <div class="cta-row">
+      <a class="button" href="https://the-hackney-osteopath.uk2.cliniko.com/bookings" target="_blank" rel="noopener">Book an appointment</a>
+      <span class="phone-line">or call <a href="tel:+447985735573">07985 735573</a></span>
+    </div>
+    <p class="facts"><span class="stars">★★★★★</span> 5.0 on <a href="https://www.google.com/maps/place/The+Hackney+Osteopath/data=!4m2!3m1!1s0x0:0x22cba5c19813d127" target="_blank" rel="noopener">Google</a> &nbsp;·&nbsp; 45-minute appointments &nbsp;·&nbsp; weekend and evening times available</p>
+  </div>
+
+  <section id="about">
+    <h2>About the practice</h2>
+    <p>Osteopathy is hands-on treatment for the muscles, joints and the way your body moves. My focus is on finding what's actually causing a problem, which is often not the place that hurts, and treating that. Sessions involve a mix of soft tissue work, joint articulation and mobilisation, along with straightforward advice on what to do between appointments.</p>
+    <p>Every appointment is 45 minutes, one to one. I keep the practice small on purpose: no room full of treatment tables, no being passed between practitioners. You see me each time, and I'd rather get you better in a few sessions than keep you coming back indefinitely.</p>
+    <p>In the UK, "osteopath" is a protected title. All practising osteopaths are registered with the General Osteopathic Council and hold full insurance.</p>
+  </section>
+
+  <section id="treat">
+    <h2>What I treat</h2>
+    <p>The most common things people come in with:</p>
+    <ul class="two-col">
+      <li>Low back pain, including sudden episodes</li>
+      <li>Neck pain and stiffness</li>
+      <li>Shoulder, hip and knee problems</li>
+      <li>Sports injuries and overuse strains</li>
+      <li>Tension and headaches from desk work</li>
+      <li>Sciatica and referred pain</li>
+      <li>Recovery after injury or a long layoff</li>
+      <li>Postural aches and general stiffness</li>
+    </ul>
+    <p>If I don't think osteopathy is the right thing for you, I'll say so at the first appointment and point you towards whoever is better placed to help.</p>
+  </section>
+
+  <section id="fees">
+    <h2>Fees</h2>
+    <table class="fee-table">
+      <tr>
+        <td>Initial consultation <span class="small muted">Case history, assessment and first treatment</span></td>
+        <td>£70 <span class="small muted">45 min</span></td>
+      </tr>
+      <tr>
+        <td>Follow-up appointment</td>
+        <td>£70 <span class="small muted">45 min</span></td>
+      </tr>
+      <tr>
+        <td>Sunday priority appointment <span class="small muted">Guaranteed weekend slot</span></td>
+        <td><span class="small muted">see booking page</span></td>
+      </tr>
+    </table>
+    <p>Booking and payment are handled online through Cliniko. Receipts are provided if you're claiming through private health insurance. Group and workplace sessions can also be arranged; <a href="tel:+447985735573">give me a ring</a> to talk it through.</p>
+  </section>
+
+  <section id="visit">
+    <h2>Your first visit</h2>
+    <p>We start by talking: your symptoms, your health history, your work and training, and what you want to get back to. Then a physical assessment, looking at how you move and where things are restricted. Most of the first appointment still leaves plenty of time for treatment.</p>
+    <p>Before you leave, I'll explain what I think is going on in plain English, what you can do yourself, and roughly how many sessions it's likely to take. Many problems improve noticeably within two to four visits.</p>
+    <p>Wear something comfortable you can move in. Leggings, shorts or loose trousers are ideal. You'll only ever be asked to undress to the level you're comfortable with, and you don't need a GP referral to book.</p>
+  </section>
+
+  <section id="find">
+    <h2>Finding the studio</h2>
+    <div class="addr-box">
+      <p><strong>The Hackney Osteopath</strong><br>
+      Unit 47, 35 Corbridge Crescent<br>
+      Cambridge Heath, London E2 9EZ</p>
+      <p><a href="tel:+447985735573">07985 735573</a><br>
+      <a href="https://www.google.com/maps/place/The+Hackney+Osteopath/data=!4m2!3m1!1s0x0:0x22cba5c19813d127" target="_blank" rel="noopener">Open in Google Maps</a></p>
+    </div>
+    <p>The studio is beside the canal, a couple of minutes' walk from Cambridge Heath station on the Overground and about twelve from Bethnal Green on the Central line. Buses run along Hackney Road and Cambridge Heath Road, and if you cycle, the towpath brings you almost to the door. Broadway Market is a short walk away if you fancy a coffee afterwards.</p>
+  </section>
+
+  <section id="faq">
+    <h2>Common questions</h2>
+    <details>
+      <summary>Does treatment hurt?</summary>
+      <p>Some techniques can feel tender while they're happening, especially around already-sore areas, but treatment shouldn't be painful. I'll check in as we go and adjust to what you're comfortable with.</p>
+    </details>
+    <details>
+      <summary>How many sessions will I need?</summary>
+      <p>It depends on the problem and how long you've had it. Many things improve within two to four sessions. You'll get an honest estimate at the first appointment, and I won't book you in for more than you need.</p>
+    </details>
+    <details>
+      <summary>Can I claim on health insurance?</summary>
+      <p>Most private policies cover osteopathy. Check your policy first, and I'll provide receipts for your claim.</p>
+    </details>
+    <details>
+      <summary>What if I need to cancel?</summary>
+      <p>Life happens. Just give as much notice as you can through the booking system or by phone so the slot can go to someone else.</p>
+    </details>
+  </section>
+
+  <section>
+    <h2>Booking</h2>
+    <p>The easiest way is online, where you can see live availability including evenings and Sundays. If you'd rather talk first, phone or text and I'll get back to you between patients.</p>
+    <div class="cta-row">
+      <a class="button" href="https://the-hackney-osteopath.uk2.cliniko.com/bookings" target="_blank" rel="noopener">Book online</a>
+      <span class="phone-line"><a href="tel:+447985735573">07985 735573</a></span>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="container">
+    <p>The Hackney Osteopath · Unit 47, 35 Corbridge Crescent, London E2 9EZ · <a href="tel:+447985735573">07985 735573</a></p>
+    <p><a href="https://the-hackney-osteopath.uk2.cliniko.com/bookings" target="_blank" rel="noopener">Book online</a> · <a href="https://www.google.com/maps/place/The+Hackney+Osteopath/data=!4m2!3m1!1s0x0:0x22cba5c19813d127" target="_blank" rel="noopener">Google Maps</a></p>
+    <p>Website concept prepared for The Hackney Osteopath. Design proposal, not the practice's live site.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  var btn=document.getElementById('theme-toggle');
+  var saved=null;
+  try{saved=localStorage.getItem('theme')}catch(e){}
+  if(saved==='dark'||saved==='light'){root.setAttribute('data-theme',saved)}
+  function current(){
+    var t=root.getAttribute('data-theme');
+    if(t==='dark'||t==='light'){return t}
+    return window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+  }
+  function setLabel(){btn.textContent=current()==='dark'?'Light mode':'Dark mode'}
+  btn.addEventListener('click',function(){
+    var next=current()==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('theme',next)}catch(e){}
+    setLabel();
+  });
+  setLabel();
+})();
+</script>
+
+</body>
+</html>
